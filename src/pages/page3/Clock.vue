@@ -13,7 +13,10 @@ export default {
   mounted: function() {
     let callback = () => this.time = moment().format("HH:mm:ss")
     callback();
-    setInterval(callback, 1000);
+    this.timerId = setInterval(callback, 1000);
+  },
+  beforeDestroy: function() {
+    clearInterval(this.timerId);
   }
 }
 </script>
