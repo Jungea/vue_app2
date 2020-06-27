@@ -16,7 +16,7 @@ export default {
   mounted: function() {
     let callback = () => {
       this.time = moment().format(this.format)
-      // console.log(this.time)
+      console.log(this.time)
     }
     callback();
     this.timerId = setInterval(callback, 1000);
